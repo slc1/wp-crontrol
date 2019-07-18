@@ -1180,7 +1180,13 @@ class Crontrol {
                         <label class="control-label"><?php _e( 'Max selected items count:', 'wp-crontrol' ) ?></label>
                     </th>
                     <td>
-                        <input id="wp-crontrol-selector-count" type="number" value="100"  style="max-width: 100px;">
+                        <input id="wp-crontrol-selector-count" type="number" value="100"  style="max-width: 100px;"> &nbsp;
+                        <div id="wp-crontrol-selector-count-total" style="display: none">
+                            <?php _e( 'Total items with', 'wp-crontrol' ) ?>
+                            &quot;<span id="wp-crontrol-template-label"></span>&quot;
+                            -
+                            <span id="wp-crontrol-total-items"></span>
+                        </div>
                     </td>
                 </tr>
                 <tr class="form-field">
@@ -1197,6 +1203,11 @@ class Crontrol {
                   $("input[type='checkbox'][name*='" +
                     $('#wp-crontrol-selector-template').val() +
                     "']").slice(0, parseInt($('#wp-crontrol-selector-count').val())).prop("checked", true);
+                  $('#wp-crontrol-template-label').html($('#wp-crontrol-selector-template').val());
+                  $('#wp-crontrol-total-items').html($("input[type='checkbox'][name*='" +
+                    $('#wp-crontrol-selector-template').val() +
+                    "']").length);
+                  $('#wp-crontrol-selector-count-total').show();
                 });
                 $('#wp-crontrol-selector-uncheck-all').click(function() {
                   $("input[type='checkbox'][name*='delete']").prop("checked", false);
