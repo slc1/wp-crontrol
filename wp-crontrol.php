@@ -1183,8 +1183,7 @@ class Crontrol {
                         <input id="wp-crontrol-selector-count" type="number" value="100"  style="max-width: 100px;"> &nbsp;
                         <div id="wp-crontrol-selector-count-total" style="display: none">
                             <?php _e( 'Total items with', 'wp-crontrol' ) ?>
-                            &quot;<span id="wp-crontrol-template-label"></span>&quot;
-                            -
+                            &quot;<span id="wp-crontrol-template-label"></span>&quot;:
                             <span id="wp-crontrol-total-items"></span>
                         </div>
                     </td>
